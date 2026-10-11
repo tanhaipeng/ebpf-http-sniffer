@@ -1,0 +1,11 @@
+# The kernel side program is compiled for `bpfel-unknown-none` with
+# `-Z build-std=core`, which needs a nightly compiler plus the `rust-src`
+# component. Declaring it here means `cargo build` picks the right toolchain
+# (and installs it on first use) without any extra flags.
+#
+# Verified with rustc 1.101.0-nightly (2026-10-10). For reproducible builds pin
+# the date, e.g. channel = "nightly-2026-10-10", and use the same value in
+# `Toolchain::Custom(...)` in build.rs.
+[toolchain]
+channel = "nightly"
+components = ["rust-src", "rustfmt"]

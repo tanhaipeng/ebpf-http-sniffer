@@ -1,0 +1,16 @@
+[package]
+name = "ebpf-http-sniffer-common"
+version = "0.1.0"
+edition = "2021"
+description = "Types and packet/HTTP parsing shared by the eBPF program and its userspace loader"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+
+[features]
+default = []
+# Enables the `alloc` based modules (`http`, `flow`) that only the userspace
+# side needs. The eBPF build must not enable this: it is compiled with
+# `-Z build-std=core`, so `alloc` does not exist there.
+user = []

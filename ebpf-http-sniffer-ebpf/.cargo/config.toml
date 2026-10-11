@@ -1,0 +1,8 @@
+# This file is picked up when cargo runs with this directory as its working
+# directory (which is what `cargo xtask build-ebpf` does), so the kernel-side
+# crate is always built for the BPF target with a freshly built `core`.
+[build]
+target = "bpfel-unknown-none"
+
+[unstable]
+build-std = ["core"]

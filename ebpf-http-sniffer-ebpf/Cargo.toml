@@ -1,0 +1,11 @@
+[package]
+name = "ebpf-http-sniffer-ebpf"
+version = "0.1.0"
+edition = "2021"
+description = "TC classifier that copies plaintext TCP payloads on HTTP ports into a ring buffer"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[dependencies]
+ebpf-http-sniffer-common = { path = "../ebpf-http-sniffer-common" }
+aya-ebpf = "0.2"
